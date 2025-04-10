@@ -1,0 +1,170 @@
+/* 基本のスタイル */
+:root {
+  --primary-color: #4F46E5;
+  --primary-hover: #3730A3;
+  --text-color: #111827;
+  --background-color: linear-gradient(135deg, #fdfbfb, #ebedee);
+  --card-bg: rgba(255, 255, 255, 0.6);
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --radius: 12px;
+  --accent-color: #7c3aed;
+  --accent-hover: #6d28d9;
+}
+
+/* リンク */
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+/* ボディ */
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  color: #333; /* 暗い背景には濃い文字色 */
+}
+
+/* ボタン */
+button {
+  border-radius: 8px;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #333;
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto #646cff;
+}
+
+/* セクション */
+section, article {
+  width: 100%;
+  text-align: center;
+}
+
+/* 見出し */
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.0em;
+  line-height: 1.1;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.4em;
+  line-height: 1.1;
+  text-align: left;
+}
+
+
+
+/* コンテナ */
+.container {
+  display: flex;
+  flex-direction: column; /* 上下に並べる */
+  align-items: center; /* コンテンツを中央に配置 */
+  gap: 20px; /* 上下の間隔 */
+  margin: 0 auto; /* 中央揃え */
+  padding: 20px;
+  min-width: 1280px;
+}
+
+/* Introduction */
+.center-content {
+  width: 100%; /* 全幅 */
+  text-align: center;
+}
+
+/* News と その他のコンテンツを横並び */
+.bottom-content {
+  display: flex;
+  justify-content: space-between; /* 均等に広げる */
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1500px; /* 幅を広げる */
+  width: 90%; /* 画面幅の90%を使用 */
+  margin: 0 auto; /* 中央寄せ */
+}
+
+/* 食事アイテムコンテナ */
+.meals-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+/* 食事アイテム */
+.meal-item {
+  display: inline-block; /* 横に並べる */
+  margin: 10px;
+  text-align: center;
+}
+
+/* ボタン（more/less） */
+.more-button, .less-button {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.more-button:hover, .less-button:hover {
+  background-color: darkblue;
+}
+
+/* Newsセクション */
+.sub-section {
+  width: 15%; /* News セクションの幅 */
+  text-align: left;
+}
+
+/* Projects と Awardsセクション */
+.main-content {
+  width: 80%; /* Projects と Awards セクションの幅 */
+}
+
+/* 画面幅が768px以下の場合のレスポンシブ対応 */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px; /* 余白を少なく */
+  }
+
+  .bottom-content {
+    flex-direction: column; /* 縦並びに変更 */
+    align-items: center;
+  }
+
+  .news-section, .main-content {
+    width: 100%; /* セクションの幅を100%に */
+    text-align: center;
+  }
+}
