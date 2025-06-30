@@ -1,11 +1,14 @@
 import React from 'react';
+import profileImage from '/profile.png';
+import mapiconImage from '/mapicon.png';
+import AtCoderImage from '/AtCoder.png';
 
 function Profile() {
   return (
     <section>
       <h2>Profile</h2>
       <img
-        src="/profile.png"
+        src={profileImage}
         alt="松尾宏太のプロフィール画像"
         width="200"
         height="200"
@@ -17,7 +20,7 @@ function Profile() {
         style={{ display: "flex", alignItems: "center", gap: "8px", textDecoration: "none", marginTop: "10px" }}
       >
         <img
-          src="/mapicon.png"  
+          src={mapiconImage}
           alt="Map Pin"
           width="24"
           height="24"
@@ -31,7 +34,7 @@ function Profile() {
         style={{ display: "flex", alignItems: "center", gap: "8px", textDecoration: "none", marginTop: "10px" }}
       >
         <img
-          src="/AtCoder.png"  
+          src={AtCoderImage} 
           alt="AtCoder"
           width="24"
           height="24"
