@@ -1,17 +1,29 @@
 [
     {
+      "date": "2025-06-22",
+      "title": "go-jiro",
+      "content": "ハッカソンに出場して、gojiroというWebアプリを開発しました。",
+      "image": "gojiro.png",
+      "titleLink": "https://go-jiro-frontend.onrender.com/",
+      "githubLink": "https://github.com/geek-hackathon2025-vol5-team-hci/go-jiro"
+      
+    },  
+    {
       "date": "2025-06-07",
       "title": "積み単",
       "content": "ハッカソンに出場して、積み単というWebアプリを開発しました。",
-      "image": "tumitan.jpg"
+      "image": "tumitan.jpg",
+      "titleLink": "https://tsumitan.me",
+      "githubLink": "https://github.com/orgs/geek-hackathon-vol6-team20/repositories"
 
     },
-    [
+  
     {
       "date": "2025-02-13",
       "title": "卒業論文",
-      "content": "仰臥位でのHMD使用時のターゲット選択操作におけるRayの最適オフセット角の調査"
+      "content": "仰臥位でのHMD使用時のターゲット選択操作におけるRayの最適オフセット角の調査",
+      "image":"soturon.jpg",
+      "githubLink": "https://github.com/Tako50/VRoffset"
     }
-]
 ]
   

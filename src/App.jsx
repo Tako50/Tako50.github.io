@@ -3,7 +3,6 @@ import Profile from "./components/Profile";
 import News from "./components/News";
 import Introduction from "./components/Introduction";
 import Projects from "./components/Projects";
-import Awards from "./components/Awards";
 import Skill from "./components/Skill";
 import Meals from "./components/Meals";
 import ImageCarousel from './components/ImageCarousel';
@@ -30,9 +29,6 @@ function App() {
           </div>
           <section>
             <Projects />
-          </section>
-          <section>
-            <Awards />
           </section>
           <section>
             <Skill />
