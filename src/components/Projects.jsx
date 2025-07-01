@@ -16,7 +16,9 @@ function Projects() {
         <ProjectArticle
           key={index}
           date={article.date}
+          title={article.title} // titleプロパティを渡す
           content={article.content}
+          image={article.image}
         />
       ))}
     </section>
