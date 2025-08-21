@@ -12,7 +12,7 @@ function HistoryTimeline() {
   return (
     <section className="w-full flex justify-center py-8 bg-gray-50">
       <div className="w-full max-w-xs sm:max-w-sm md:max-w-xl lg:max-w-2xl px-4 sm:px-6">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-center mb-10 text-blue-700 tracking-tight">History</h2>
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-center mb-10  tracking-tight">History</h2>
         <ol className="relative border-l-4 border-blue-200">
           {events.map((event, idx) => (
             <li key={idx} className="mb-10 ml-6">
