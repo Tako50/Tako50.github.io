@@ -13,9 +13,9 @@ function Skill() {
   const data = [
     { name: "Python", value: 500, description: "3年" },
     { name: "C", value: 400, description: "2年" },
+    { name: "JavaScript", value: 300, description: "1年" },
+    { name: "HTML/CSS", value: 300, description: "1年" },
     { name: "Unity/C#", value: 300, description: "1年" },
-    { name: "HTML/CSS", value: 200, description: "3ヶ月" },
-    { name: "JavaScript", value: 200, description: "3ヶ月" },
     { name: "Arduino", value: 100, description: "1ヶ月" },
   ];
 
