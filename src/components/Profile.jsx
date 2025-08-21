@@ -2,6 +2,7 @@ import React from 'react';
 import profileImage from '/profile.png';
 import mapiconImage from '/mapicon.png';
 import AtCoderImage from '/AtCoder.png';
+import GitHubImage from '/GitHub.png';
 
 function Profile() {
   return (
@@ -38,7 +39,21 @@ function Profile() {
         />
         <p className="m-0 text-blue-600 text-center font-semibold text-sm sm:text-base">AtCoder</p>
       </a>
+      <a
+        href="https://github.com/Tako50"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 no-underline mt-3 hover:opacity-80"
+      >
+        <img
+          src={GitHubImage}
+          alt="GitHub"
+          className="w-6 h-6"
+        />
+        <p className="m-0 text-blue-600 text-center font-semibold text-sm sm:text-base">GitHub</p>
+      </a>
     </section>
+    
   );
 }
 
