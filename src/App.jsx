@@ -10,21 +10,21 @@ import HistoryTimeline from './components/HistoryTimeline';
 
 function App() {
   return (
-    <div className="container">
-      <section>
+    <div className="max-w-7xl mx-auto px-4 py-8">
+      <section className="mb-8">
         <ImageCarousel />
       </section>
-      <div className="bottom-content">
-        <div className="sub-section">
-          <div className="profile-section">
+      <div className="flex flex-col md:flex-row gap-8">
+        <div className="flex flex-col gap-8 md:w-1/3">
+          <div>
             <Profile />
           </div>
-          <div className="news-section">
+          <div>
             <News />
           </div>
         </div>
-        <div className="main-content">
-          <div className="center-content">
+        <div className="flex-1 flex flex-col gap-8">
+          <div>
             <Introduction />
           </div>
           <section>

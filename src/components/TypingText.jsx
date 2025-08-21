@@ -17,12 +17,22 @@ function TypingText() {
       });
       index += 1;
       if (index === fullText.length) clearInterval(interval);
-    }, 150); // 150ミリ秒ごとに1文字を追加
+    }, 150);
 
-    return () => clearInterval(interval); // クリーンアップ
-  }, []); // 空の依存配列で初回レンダリング時のみ実行
+    return () => clearInterval(interval);
+  }, []);
 
-  return <h1>{text}</h1>;
+  return (
+    <h1 className="
+      text-xl sm:text-3xl md:text-4xl 
+      font-extrabold text-blue-700 
+      tracking-wide text-center 
+      mb-4 break-words 
+      px-2 max-w-xs sm:max-w-md md:max-w-lg mx-auto
+    ">
+      {text}
+    </h1>
+  );
 }
 
 export default TypingText;

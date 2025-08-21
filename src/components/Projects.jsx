@@ -9,19 +9,23 @@ function Projects() {
   }, []);
 
   return (
-    <section>
-      <h2>Works</h2>
-      {articles.map((article, index) => (
-        <ProjectArticle
-          key={index}
-          date={article.date}
-          title={article.title} 
-          content={article.content}
-          image={article.image}
-          titleLink={article.titleLink}
-          githubLink={article.githubLink}
-        />
-      ))}
+    <section className="w-full max-w-sm sm:max-w-md md:max-w-3xl mx-auto py-6 sm:py-8 px-3 sm:px-4 bg-white rounded-lg shadow-md">
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 text-center">
+        Works
+      </h2>
+      <div className="flex flex-col gap-4 sm:gap-6">
+        {articles.map((article, index) => (
+          <ProjectArticle
+            key={index}
+            date={article.date}
+            title={article.title} 
+            content={article.content}
+            image={article.image}
+            titleLink={article.titleLink}
+            githubLink={article.githubLink}
+          />
+        ))}
+      </div>
     </section>
   );
 }

@@ -5,41 +5,38 @@ import AtCoderImage from '/AtCoder.png';
 
 function Profile() {
   return (
-    <section>
-      <h2>Profile</h2>
+    <section className="w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto my-8 px-4 sm:px-6 py-8 bg-white rounded-2xl shadow-md flex flex-col items-center">
+      <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center">Profile</h2>
       <img
         src={profileImage}
         alt="松尾宏太のプロフィール画像"
-        width="200"
-        height="200"
+        className="w-40 h-40 sm:w-48 sm:h-48 rounded-full shadow mb-4"
       />
       <a
         href="https://maps.app.goo.gl/8mjvpY8Za7vgMgtCA"
         target="_blank"
         rel="noopener noreferrer"
-        style={{ display: "flex", alignItems: "center", gap: "8px", textDecoration: "none", marginTop: "10px" }}
+        className="flex items-center gap-2 no-underline mt-3 hover:opacity-80"
       >
         <img
           src={mapiconImage}
           alt="Map Pin"
-          width="24"
-          height="24"
+          className="w-6 h-6"
         />
-        <p style={{ margin: 0, color: "blue", textAlign: "center" }}>Hokkaido</p>
+        <p className="m-0 text-blue-600 text-center font-semibold text-sm sm:text-base">Hokkaido</p>
       </a>
       <a
         href="https://atcoder.jp/users/tako50"
         target="_blank"
         rel="noopener noreferrer"
-        style={{ display: "flex", alignItems: "center", gap: "8px", textDecoration: "none", marginTop: "10px" }}
+        className="flex items-center gap-2 no-underline mt-3 hover:opacity-80"
       >
         <img
-          src={AtCoderImage} 
+          src={AtCoderImage}
           alt="AtCoder"
-          width="24"
-          height="24"
+          className="w-6 h-6"
         />
-        <p style={{ margin: 0, color: "blue", textAlign: "center" }}>AtCoder</p>
+        <p className="m-0 text-blue-600 text-center font-semibold text-sm sm:text-base">AtCoder</p>
       </a>
     </section>
   );
