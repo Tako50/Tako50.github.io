@@ -6,7 +6,7 @@ import GitHubImage from '/GitHub.png';
 
 function Profile() {
   return (
-    <section className="w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto my-8 px-4 sm:px-6 py-8 bg-white rounded-2xl shadow-md flex flex-col items-center">
+    <section className="w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto  px-4 sm:px-6 py-8 bg-white rounded-2xl shadow-md flex flex-col items-center">
       <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center">Profile</h2>
       <img
         src={profileImage}

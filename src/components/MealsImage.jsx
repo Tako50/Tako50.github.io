@@ -2,30 +2,25 @@ import React, { useState } from 'react';
 
 function MealsImage({ date, image }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalImage, setModalImage] = useState("");
 
-  const openModal = (image) => {
-    setModalImage(image);
-    setIsModalOpen(true);
-  };
-
+  const openModal = () => setIsModalOpen(true);
   const closeModal = (e) => {
-    if (e.target === e.currentTarget || e.type === 'click') {
-      setIsModalOpen(false);
-    }
+    if (e.target === e.currentTarget || e.type === 'click') setIsModalOpen(false);
   };
 
   return (
-    <div className="w-full flex justify-center mb-6">
-      <article className="flex flex-col items-center">
+    <>
+      <div className="relative w-full flex justify-center mb-6 rounded-2xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
         <img
           src={`/${image}`}
           alt="Meal"
-          className="w-full max-w-[200px] sm:w-40 sm:h-40 rounded-lg shadow cursor-pointer object-cover"
-          onClick={() => openModal(image)}
+          className="w-full h-48 object-cover"
+          onClick={openModal}
         />
-        <p className="mt-2 text-sm sm:text-base text-gray-600">{date || "No date"}</p>
-      </article>
+        <span className="absolute top-2 left-2 bg-blue-500 text-white text-xs px-2 py-1 rounded">
+          {date || "No date"}
+        </span>
+      </div>
 
       {/* Modal */}
       {isModalOpen && (
@@ -35,7 +30,7 @@ function MealsImage({ date, image }) {
         >
           <div className="relative bg-white rounded-2xl shadow-lg p-4 max-w-full w-full sm:max-w-lg flex flex-col items-center">
             <img
-              src={`/${modalImage}`}
+              src={`/${image}`}
               alt="Meal Full"
               className="max-w-full max-h-[70vh] rounded-lg mb-4"
             />
@@ -48,7 +43,7 @@ function MealsImage({ date, image }) {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }
 

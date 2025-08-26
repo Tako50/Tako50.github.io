@@ -29,7 +29,7 @@ const handleClick = (id) => {
 
   return (
     <header className="w-full bg-white shadow-md fixed top-0 left-0 z-50">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 flex justify-between items-center h-16">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 flex justify-between items-center h-16 gap-x-6">
         {/* ロゴ */}
         <div className="text-xl font-bold text-blue-700">
           Matsuo Kota
