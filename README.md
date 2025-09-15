@@ -1,12 +1,45 @@
-# React + Vite
+# 松尾宏太 ポートフォリオサイト
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+これは、松尾宏太のポートフォリオサイトのソースコードです。ReactとViteを使用して構築されています。
 
-Currently, two official plugins are available:
+## 概要
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+このサイトは、私のプロフィール、経歴、スキル、制作物などを紹介するためのものです。
 
-## Expanding the ESLint configuration
+## 主な使用技術
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React
+* Vite
+* Tailwind CSS
+* React Slick
+* Recharts
+* Font Awesome
+
+## 主な機能
+
+* **プロフィール**: 自己紹介、所属、SNSリンクなどを掲載しています。
+* **ニュース**: 最新の活動やお知らせを掲載しています。
+* **自己紹介**: 詳細な自己紹介を掲載しています。
+* **制作物**: これまでに開発したWebアプリケーションや卒業論文などを紹介しています。
+* **スキル**: プログラミング言語やフレームワークなどのスキルを可視化しています。
+* **経歴**: 学歴や職歴をタイムライン形式で表示しています。
+* **食事ログ**: 日々の食事を写真で記録しています。
+
+## インストールと実行方法
+
+1.  **リポジトリをクローン**:
+    ```bash
+    git clone [https://github.com/Tako50/Tako50.github.io.git](https://github.com/Tako50/Tako50.github.io.git)
+    ```
+2.  **依存関係をインストール**:
+    ```bash
+    npm install
+    ```
+3.  **開発サーバーを起動**:
+    ```bash
+    npm run dev
+    ```
+
+## デプロイ
+
+このプロジェクトは、GitHub Actionsを使用してGitHub Pagesに自動でデプロイされるように設定されています。`main`ブランチにプッシュすると、自動的にビルドとデプロイが実行されます。
