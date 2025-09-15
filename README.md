@@ -6,14 +6,13 @@
 
 このサイトは、私のプロフィール、経歴、スキル、制作物などを紹介するためのものです。
 
-## 主な使用技術
 
-* React
-* Vite
-* Tailwind CSS
-* React Slick
-* Recharts
-* Font Awesome
+## 技術スタック
+![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?logo=tailwind-css&logoColor=white)
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-181717?logo=github&logoColor=white)
+
 
 ## 主な機能
 
