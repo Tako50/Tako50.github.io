@@ -22,7 +22,7 @@ function Skill() {
   return (
     <section className="w-full max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto py-8 px-4 sm:px-6 bg-white rounded-2xl shadow-md">
       <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-center">
-        Skill
+        Skill Experience
       </h2>
       <div className="w-full h-[250px] sm:h-[300px] md:h-[400px]">
         <ResponsiveContainer>
