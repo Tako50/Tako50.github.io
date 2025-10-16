@@ -1,4 +1,13 @@
 [
+   {
+      "date": "2025-09-3",
+      "title": "HCI研究会",
+      "content": "卒業論文の内容をもとに、HCI研究会で発表しました。",
+      "image": "soturon.jpg",
+      "titleLink": "https://ipsj.ixsq.nii.ac.jp/records/2003780",
+      "githubLink": "https://github.com/Tako50/VRoffset"
+      
+    }, 
     {
       "date": "2025-06-22",
       "title": "go-jiro",
