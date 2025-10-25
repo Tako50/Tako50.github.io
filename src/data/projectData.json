@@ -2,7 +2,7 @@
   {
       "date": "2025-10-18,19",
       "title": "AshiArt",
-      "content": "JPHACKS 2025に参加し、AshiArtという足で描くお絵かきアプリを開発しました。株式会社ヤマレコ様からスポンサー賞をいただきました。またAwardDayに進出しました",
+      "content": "JPHACKS 2025に参加し、AshiArtというGPSアートを絵を描くだけで自動で生成するWebアプリを開発しました。株式会社ヤマレコ様からスポンサー賞をいただきました。またAwardDayに進出しました。",
       "image": "AshiArt.png",
       "titleLink": "https://ashiart.vercel.app/home",
       "githubLink": "https://github.com/jphacks/sp_2509"
