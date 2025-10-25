@@ -1,4 +1,13 @@
 [
+  {
+      "date": "2025-10-18,19",
+      "title": "AshiArt",
+      "content": "JPHACKS 2025に参加し、AshiArtという足で描くお絵かきアプリを開発しました。株式会社ヤマレコ様からスポンサー賞をいただきました。またAwardDayに進出しました",
+      "image": "AshiArt.png",
+      "titleLink": "https://ashiart.vercel.app/home",
+      "githubLink": "https://github.com/jphacks/sp_2509"
+      
+    }, 
    {
       "date": "2025-09-3",
       "title": "仰臥位でのHMD使用時のターゲット選択操作におけるレイの適切なオフセット角の検討(HCI研究会)",
