@@ -1,5 +1,14 @@
 [
   {
+      "date": "2025-11-10",
+      "title": "AshiArt",
+      "content": "JPHAKCS AwardDayに参加しました。Best Hack Award、Best Audience Award、JPHACKS Inovator認定、スポンサー賞（ディップ株式会社様、ロート製薬株式会社様、三菱重工業株式会社様）をいただきました。",
+      "image": "AshiArt.png",
+      "titleLink": "https://ashiart.vercel.app/home",
+      "githubLink": "https://github.com/jphacks/sp_2509"
+      
+    },
+  {
       "date": "2025-10-18,19",
       "title": "AshiArt",
       "content": "JPHACKS 2025に参加し、AshiArtというGPSアートを絵を描くだけで自動で生成するWebアプリを開発しました。株式会社ヤマレコ様からスポンサー賞をいただきました。またAwardDayに進出しました。",
