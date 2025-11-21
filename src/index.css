@@ -1,172 +1,213 @@
 @import "tailwindcss";
 
-/* 基本のスタイル */
+@variant dark (&:where(.dark, .dark *));
+
+/* Calm & Professional Theme Variables */
 :root {
-  --primary-color: #4F46E5;
-  --primary-hover: #3730A3;
-  --text-color: #111827;
-  --background-color: linear-gradient(135deg, #fdfbfb, #ebedee);
-  --card-bg: rgba(255, 255, 255, 0.6);
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  --radius: 12px;
-  --accent-color: #7c3aed;
-  --accent-hover: #6d28d9;
+  --primary-color: #334155;
+  /* Slate 700 */
+  --primary-hover: #1e293b;
+  /* Slate 800 */
+  --accent-color: #0f766e;
+  /* Teal 700 */
+  --text-color: #1e293b;
+  /* Slate 800 */
+  --text-muted: #64748b;
+  /* Slate 500 */
+  --background-color: #f8fafc;
+  /* Slate 50 */
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+  /* Slate 200 */
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --radius: 8px;
 }
 
-/* リンク */
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+/* Dark Mode Overrides */
+.dark {
+  --primary-color: #e2e8f0;
+  /* Slate 200 */
+  --primary-hover: #f8fafc;
+  /* Slate 50 */
+  --accent-color: #2dd4bf;
+  /* Teal 400 */
+  --text-color: #f1f5f9;
+  /* Slate 100 */
+  --text-muted: #94a3b8;
+  /* Slate 400 */
+  --background-color: #0f172a;
+  /* Slate 900 */
+  --card-bg: #1e293b;
+  /* Slate 800 */
+  --border-color: #334155;
+  /* Slate 700 */
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
 }
 
-a:hover {
-  color: #535bf2;
-}
-
-/* ボディ */
+/* Base Styles */
 body {
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
-  padding: 20px;
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-  color: #333; /* 暗い背景には濃い文字色 */
+  background-color: var(--background-color);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* ボタン */
-button {
-  border-radius: 8px;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  color: white;
-  cursor: pointer;
-  transition: all 0.3s ease;
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-color);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
 }
 
-button:hover {
-  background-color: #333;
-  border-color: #646cff;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto #646cff;
-}
-
-/* セクション */
-section, article {
-  width: 100%;
-  text-align: center;
-}
-
-/* 見出し */
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-  text-align: center;
+  font-size: 3rem;
+  letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: 2.0em;
-  line-height: 1.1;
-  text-align: center;
+  font-size: 2.25rem;
+  letter-spacing: -0.01em;
 }
 
 h3 {
-  font-size: 1.4em;
-  line-height: 1.1;
-  text-align: left;
+  font-size: 1.5rem;
 }
 
-
-
-/* コンテナ */
-.container {
-  display: flex;
-  flex-direction: column; /* 上下に並べる */
-  align-items: center; /* コンテンツを中央に配置 */
-  gap: 20px; /* 上下の間隔 */
-  margin: 0 auto; /* 中央揃え */
-  padding: 20px;
-  min-width: 1280px;
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-/* Introduction */
-.center-content {
-  width: 100%; /* 全幅 */
-  text-align: center;
+a:hover {
+  color: #0d9488;
+  /* Teal 600 */
 }
 
-/* News と その他のコンテンツを横並び */
-.bottom-content {
-  display: flex;
-  justify-content: space-between; /* 均等に広げる */
-  align-items: flex-start;
-  gap: 40px;
-  max-width: 1500px; /* 幅を広げる */
-  width: 90%; /* 画面幅の90%を使用 */
-  margin: 0 auto; /* 中央寄せ */
+.dark a:hover {
+  color: #5eead4;
+  /* Teal 300 */
 }
 
-/* 食事アイテムコンテナ */
-.meals-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 10px;
+/* Clean Card Utilities */
+.clean-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
 }
 
-/* 食事アイテム */
-.meal-item {
-  display: inline-block; /* 横に並べる */
-  margin: 10px;
-  text-align: center;
+.clean-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
 }
 
-/* ボタン（more/less） */
-.more-button, .less-button {
-  background-color: blue;
+.dark .clean-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
+button {
+  background-color: var(--primary-color);
   color: white;
-  padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 500;
   cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow);
 }
 
-.more-button:hover, .less-button:hover {
-  background-color: darkblue;
+.dark button {
+  background-color: #334155;
+  /* Slate 700 */
+  color: #f1f5f9;
 }
 
-/* Newsセクション */
-.sub-section {
-  width: 15%; /* News セクションの幅 */
-  text-align: left;
+button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
 }
 
-/* Projects と Awardsセクション */
-.main-content {
-  width: 80%; /* Projects と Awards セクションの幅 */
+.dark button:hover {
+  background-color: #475569;
+  /* Slate 600 */
 }
 
-/* 画面幅が768px以下の場合のレスポンシブ対応 */
-@media (max-width: 768px) {
-  .container {
-    padding: 10px; /* 余白を少なく */
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
 
-  .bottom-content {
-    flex-direction: column; /* 縦並びに変更 */
-    align-items: center;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  .news-section, .main-content {
-    width: 100%; /* セクションの幅を100%に */
-    text-align: center;
-  }
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Utility Classes */
+.section-title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--primary-color);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
 }

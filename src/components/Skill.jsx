@@ -20,8 +20,8 @@ function Skill() {
   ];
 
   return (
-    <section className="w-full max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto py-8 px-4 sm:px-6 bg-white rounded-2xl shadow-md">
-      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-center">
+    <section className="w-full max-w-4xl mx-auto py-10 px-6 clean-card animate-fade-in">
+      <h2 className="text-3xl font-bold mb-10 text-center text-slate-800 dark:text-slate-100">
         Skill Experience
       </h2>
       <div className="w-full h-[250px] sm:h-[300px] md:h-[400px]">
@@ -31,25 +31,25 @@ function Skill() {
             data={data}
             margin={{ top: 20, right: 20, left: 50, bottom: 20 }}
           >
-            <CartesianGrid strokeDasharray="3 3" stroke="transparent" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#94a3b8" opacity={0.2} />
             <XAxis type="number" tick={false} axisLine={false} />
             <YAxis
               dataKey="name"
               type="category"
-              tick={{ fill: "#444", fontSize: 12 }}
+              tick={{ fill: "#64748b", fontSize: 12, fontWeight: 500 }}
               axisLine={false}
               width={80}
             />
             <Tooltip
-              cursor={false}
+              cursor={{ fill: 'rgba(0,0,0,0.05)' }}
               content={({ payload }) => {
                 if (payload && payload.length) {
                   const { name, description } = payload[0].payload;
                   return (
-                    <div className="bg-gray-800 text-white p-3 rounded-lg shadow text-sm w-48 font-sans">
-                      <div className="mb-1 font-bold text-base">{name}</div>
+                    <div className="bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 p-3 rounded-lg border border-slate-200 dark:border-slate-700 shadow-lg text-sm w-48 font-sans">
+                      <div className="mb-1 font-bold text-base text-teal-700 dark:text-teal-400">{name}</div>
                       {description && (
-                        <div className="italic text-xs text-blue-100">{`Experience: ${description}`}</div>
+                        <div className="italic text-xs text-slate-500 dark:text-slate-400">{`Experience: ${description}`}</div>
                       )}
                     </div>
                   );
@@ -59,16 +59,10 @@ function Skill() {
             />
             <Bar
               dataKey="value"
-              fill="url(#gradient)"
-              radius={[20, 20, 20, 20]}
-              barSize={20}
+              fill="#0f766e"
+              radius={[0, 4, 4, 0]}
+              barSize={24}
             />
-            <defs>
-              <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#8e44ad" stopOpacity={0.8} />
-                <stop offset="100%" stopColor="#3498db" stopOpacity={0.8} />
-              </linearGradient>
-            </defs>
           </BarChart>
         </ResponsiveContainer>
       </div>

@@ -23,14 +23,9 @@ function TypingText() {
   }, []);
 
   return (
-    <h1 className="
-      text-xl sm:text-3xl md:text-4xl 
-      font-extrabold text-blue-700 
-      tracking-wide text-center 
-      mb-4 break-words 
-      px-2 max-w-xs sm:max-w-md md:max-w-lg mx-auto
-    ">
+    <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-800 dark:text-slate-100 drop-shadow-sm">
       {text}
+      <span className="inline-block w-1 h-[1em] bg-teal-600 dark:bg-teal-400 ml-1 align-middle animate-pulse"></span>
     </h1>
   );
 }

@@ -12,17 +12,19 @@ const events = [
 
 function HistoryTimeline() {
   return (
-    <section className="w-full max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto py-8 px-4 sm:px-6 bg-white rounded-2xl shadow-md">
-      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-center">History</h2>
-      <ol className="relative border-l-4 border-blue-200">
+    <section className="w-full max-w-4xl mx-auto py-10 px-6 clean-card animate-fade-in">
+      <h2 className="text-3xl font-bold mb-10 text-center text-slate-800 dark:text-slate-100">
+        History
+      </h2>
+      <ol className="relative border-l-2 border-slate-200 dark:border-slate-700 ml-3 sm:ml-6 space-y-8">
         {events.map((event, idx) => (
-          <li key={idx} className="mb-10 ml-6">
-            <span className="absolute -left-6 flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-full ring-4 ring-white">
-              <i className={`fas fa-${event.icon} text-blue-600 text-lg sm:text-2xl`}></i>
+          <li key={idx} className="ml-6 sm:ml-10 relative group">
+            <span className="absolute -left-[33px] sm:-left-[49px] flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-white dark:bg-slate-800 rounded-full border-2 border-teal-600 dark:border-teal-400 group-hover:scale-110 transition-transform duration-300 shadow-sm">
+              <i className={`fas fa-${event.icon} text-teal-600 dark:text-teal-400 text-sm sm:text-lg`}></i>
             </span>
-            <div className="pl-2">
-              <span className="block text-xs sm:text-sm text-gray-500 font-semibold mb-1">{event.date}</span>
-              <p className="text-base sm:text-lg font-semibold text-gray-800 leading-snug">{event.title}</p>
+            <div className="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-700 hover:shadow-md transition-all">
+              <span className="block text-xs sm:text-sm text-teal-700 dark:text-teal-300 font-mono mb-1">{event.date}</span>
+              <p className="text-base sm:text-lg font-medium text-slate-800 dark:text-slate-100 leading-snug">{event.title}</p>
             </div>
           </li>
         ))}

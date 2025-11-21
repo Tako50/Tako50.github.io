@@ -10,16 +10,16 @@ function Projects() {
   }, []);
 
   return (
-    <section className="w-full max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto py-8 px-4 sm:px-6 bg-white rounded-2xl shadow-md">
-      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-center">
+    <section className="w-full max-w-4xl mx-auto py-10 px-6 clean-card animate-fade-in">
+      <h2 className="text-3xl font-bold mb-10 text-center text-slate-800 dark:text-slate-100">
         Works
       </h2>
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-8">
         {articles.map((article, index) => (
           <ProjectArticle
             key={index}
             date={article.date}
-            title={article.title} 
+            title={article.title}
             content={article.content}
             image={article.image}
             titleLink={article.titleLink}

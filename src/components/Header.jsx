@@ -1,9 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  // App.jsx の id に合わせて変更
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const menuItems = [
     { id: "profile", label: "Profile" },
     { id: "news", label: "News" },
@@ -14,65 +23,82 @@ function Header() {
     { id: "meals", label: "Meals" },
   ];
 
-  // スムーズスクロール用
-// ヘッダー高さ分の余白を考慮してスクロール
-const handleClick = (id) => {
-  const section = document.getElementById(id);
-  if (section) {
-    const yOffset = -80; // ヘッダー高さ＋余裕のピクセル数
-    const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-    window.scrollTo({ top: y, behavior: "smooth" });
-  }
-  setIsOpen(false); // モバイルメニューを閉じる
-};
-
+  const handleClick = (id) => {
+    setIsOpen(false);
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
 
   return (
-    <header className="w-full bg-white shadow-md fixed top-0 left-0 z-50">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 flex justify-between items-center h-16 gap-x-6">
-        {/* ロゴ */}
-        <div className="text-xl font-bold text-blue-700">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? "bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-b border-slate-200 dark:border-slate-700 py-4 shadow-sm"
+        : "bg-transparent py-6"
+        }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
+        {/* Logo */}
+        <div
+          className="text-2xl font-bold text-slate-800 dark:text-slate-100 cursor-pointer tracking-tight"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
           Matsuo Kota
         </div>
 
-        {/* PC用ナビ */}
-        <nav className="hidden md:flex space-x-6">
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center space-x-8">
           {menuItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleClick(item.id)}
-              className="text-gray-700 hover:text-blue-600"
+              className="text-slate-600 dark:text-slate-300 hover:text-teal-700 dark:hover:text-teal-400 font-medium transition-colors relative group"
             >
               {item.label}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-600 dark:bg-teal-400 transition-all group-hover:w-full"></span>
             </button>
           ))}
+          <div className="pl-4 border-l border-slate-200 dark:border-slate-700">
+            <ThemeToggle />
+          </div>
         </nav>
 
-        {/* モバイル用ハンバーガー */}
-        <div className="md:hidden">
+        {/* Mobile Hamburger & Toggle */}
+        <div className="md:hidden flex items-center gap-4">
+          <ThemeToggle />
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-gray-700 hover:text-blue-600 text-2xl"
+            className="text-slate-700 dark:text-slate-200 hover:text-teal-700 dark:hover:text-teal-400 transition-colors"
           >
-            ☰
+            <i className={`fas ${isOpen ? 'fa-times' : 'fa-bars'} text-2xl`}></i>
           </button>
         </div>
       </div>
 
-      {/* モバイルメニュー */}
-      {isOpen && (
-        <div className="md:hidden bg-white shadow-md flex flex-col items-start">
+      {/* Mobile Menu */}
+      <div
+        className={`md:hidden absolute top-full left-0 w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 transition-all duration-300 origin-top shadow-lg ${isOpen ? "opacity-100 scale-y-100" : "opacity-0 scale-y-0"
+          }`}
+      >
+        <div className="flex flex-col p-4 space-y-2">
           {menuItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleClick(item.id)}
-              className="w-full px-4 py-2 text-gray-700 hover:bg-gray-100 text-left"
+              className="w-full px-4 py-3 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-teal-700 dark:hover:text-teal-400 rounded-lg text-left transition-colors font-medium"
             >
               {item.label}
             </button>
           ))}
         </div>
-      )}
+      </div>
     </header>
   );
 }

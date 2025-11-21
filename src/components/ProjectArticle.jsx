@@ -8,43 +8,48 @@ function ProjectArticle({ date, title, content, image, titleLink, githubLink }) 
 
   return (
     <>
-      <article className="flex flex-col sm:flex-row items-center sm:items-start mb-6">
+      <article className="flex flex-col md:flex-row items-start gap-6 p-4 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border border-transparent hover:border-slate-100 dark:hover:border-slate-700">
         {image && (
-          <img
-            src={`/${image}`}
-            alt={content}
-            className="w-full max-w-[200px] sm:w-[150px] sm:h-[150px] mb-4 sm:mb-0 sm:mr-5 object-contain rounded-lg shadow cursor-pointer"
-            onClick={handleImageClick}
-          />
+          <div className="w-full md:w-1/3 flex-shrink-0 overflow-hidden rounded-lg border border-slate-200 dark:border-slate-700">
+            <img
+              src={`/${image}`}
+              alt={content}
+              className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500 cursor-pointer"
+              onClick={handleImageClick}
+            />
+          </div>
         )}
-        <div className="text-center sm:text-left">
-          <h3 className="mt-0 text-lg sm:text-xl font-bold">
-            {titleLink ? (
-              <a
-                href={titleLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                {title}
-              </a>
-            ) : (
-              title
-            )}
-          </h3>
-          <p className="m-0 font-semibold text-gray-500 text-sm sm:text-base">{date}</p>
-          <p className="mt-1 mb-0 text-gray-800 text-sm sm:text-base">{content}</p>
+        <div className="flex-1 text-left">
+          <div className="flex flex-wrap items-baseline gap-2 mb-2">
+            <h3 className="text-xl font-bold text-slate-800 dark:text-slate-100">
+              {titleLink ? (
+                <a
+                  href={titleLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+                >
+                  {title}
+                </a>
+              ) : (
+                title
+              )}
+            </h3>
+            <span className="text-sm text-slate-500 dark:text-slate-400 font-mono">{date}</span>
+          </div>
+
+          <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">{content}</p>
+
           {githubLink && (
-            <p className="mt-2">
-              <a
-                href={githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-700 underline hover:text-blue-600 text-sm sm:text-base"
-              >
-                GitHub Repository →
-              </a>
-            </p>
+            <a
+              href={githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
+            >
+              <i className="fab fa-github"></i>
+              GitHub Repository
+            </a>
           )}
         </div>
       </article>

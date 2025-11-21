@@ -31,20 +31,24 @@ function ImageCarousel() {
   };
 
   return (
-    <div className="w-full max-w-xs sm:max-w-sm md:max-w-xl lg:max-w-2xl xl:max-w-3xl mx-auto px-4 sm:px-6">
-      <Slider {...settings}>
-        {images.map((img, i) => (
-          <div key={i}>
-            <img
-              src={img}
-              alt={`slide-${i}`}
-              className="w-full h-[200px] sm:h-[300px] md:h-[400px] object-cover rounded-2xl"
-            />
-          </div>
-        ))}
-      </Slider>
-    </div>
-  );
+    <div className="w-full max-w-5xl mx-auto mb-12 px-4 animate-fade-in">
+      <div className="rounded-2xl overflow-hidden shadow-md border border-slate-200 dark:border-slate-700">
+        <Slider {...settings}>
+          {images.map((img, index) => (
+            <div key={index} className="relative outline-none">
+              <div className="aspect-video w-full relative">
+                <img
+                  src={img}
+                  alt={`Slide ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"></div>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </div>);
 }
 
 export default ImageCarousel;

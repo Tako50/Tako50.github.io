@@ -1,47 +1,71 @@
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 
 function MealsImage({ date, image }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = (e) => {
-    if (e.target === e.currentTarget || e.type === 'click') setIsModalOpen(false);
+  const openModal = (e) => {
+    setIsModalOpen(true);
+    document.body.style.overflow = 'hidden'; // Lock scroll
   };
+
+  const closeModal = (e) => {
+    if (!e || e.target === e.currentTarget || e.type === 'click') {
+      setIsModalOpen(false);
+      document.body.style.overflow = 'unset'; // Unlock scroll
+    }
+  };
+
+  // Cleanup on unmount
+  React.useEffect(() => {
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, []);
 
   return (
     <>
-      <div className="relative w-full flex justify-center mb-6 rounded-2xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
+      <div className="relative w-full aspect-square rounded-xl overflow-hidden group cursor-pointer border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all">
         <img
           src={`/${image}`}
           alt="Meal"
-          className="w-full h-48 object-cover"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           onClick={openModal}
         />
-        <span className="absolute top-2 left-2 bg-blue-500 text-white text-xs px-2 py-1 rounded">
-          {date || "No date"}
-        </span>
+        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 pointer-events-none">
+          <span className="text-white text-sm font-medium bg-teal-700/90 px-2 py-1 rounded">
+            {date || "No date"}
+          </span>
+        </div>
       </div>
 
       {/* Modal */}
-      {isModalOpen && (
+      {/* Modal */}
+      {/* Modal */}
+      {isModalOpen && ReactDOM.createPortal(
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 cursor-zoom-out px-4"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-slate-900/90 backdrop-blur-sm cursor-zoom-out px-4 animate-fade-in"
           onClick={closeModal}
+          style={{ overflowY: 'hidden' }} // Ensure no scroll on modal container
         >
-          <div className="relative bg-white rounded-2xl shadow-lg p-4 max-w-full w-full sm:max-w-lg flex flex-col items-center">
+          <div className="relative max-w-4xl w-full flex flex-col items-center justify-center h-full p-4">
+            {/* Close Button - Fixed position relative to viewport or container */}
+            <button
+              className="absolute top-4 right-4 z-[10000] text-white/80 hover:text-white bg-black/20 hover:bg-black/40 rounded-full p-2 transition-all"
+              onClick={closeModal}
+            >
+              <i className="fas fa-times text-2xl sm:text-3xl"></i>
+            </button>
+
             <img
               src={`/${image}`}
               alt="Meal Full"
-              className="max-w-full max-h-[70vh] rounded-lg mb-4"
+              className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl border border-white/10"
+              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking image
             />
-            <button
-              className="absolute top-2 right-2 px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition text-sm sm:text-base"
-              onClick={closeModal}
-            >
-              Close
-            </button>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );

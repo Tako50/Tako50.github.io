@@ -6,54 +6,59 @@ import GitHubImage from '/GitHub.png';
 
 function Profile() {
   return (
-    <section className="w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto  px-4 sm:px-6 py-8 bg-white rounded-2xl shadow-md flex flex-col items-center">
-      <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center">Profile</h2>
-      <img
-        src={profileImage}
-        alt="松尾宏太のプロフィール画像"
-        className="w-40 h-40 sm:w-48 sm:h-48 rounded-full shadow mb-4"
-      />
-      <a
-        href="https://maps.app.goo.gl/8mjvpY8Za7vgMgtCA"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2 no-underline mt-3 hover:opacity-80"
-      >
+    <section className="w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto px-6 py-8 clean-card flex flex-col items-center animate-fade-in">
+      <h2 className="text-2xl font-bold mb-6 text-center text-slate-800 dark:text-slate-100">Profile</h2>
+      <div className="relative group">
         <img
-          src={mapiconImage}
-          alt="Map Pin"
-          className="w-6 h-6"
+          src={profileImage}
+          alt="松尾宏太のプロフィール画像"
+          className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover border-4 border-slate-100 dark:border-slate-700 shadow-sm"
         />
-        <p className="m-0 text-blue-600 text-center font-semibold text-sm sm:text-base">Hokkaido</p>
-      </a>
-      <a
-        href="https://atcoder.jp/users/tako50"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2 no-underline mt-3 hover:opacity-80"
-      >
-        <img
-          src={AtCoderImage}
-          alt="AtCoder"
-          className="w-6 h-6"
-        />
-        <p className="m-0 text-blue-600 text-center font-semibold text-sm sm:text-base">AtCoder</p>
-      </a>
-      <a
-        href="https://github.com/Tako50"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2 no-underline mt-3 hover:opacity-80"
-      >
-        <img
-          src={GitHubImage}
-          alt="GitHub"
-          className="w-6 h-6"
-        />
-        <p className="m-0 text-blue-600 text-center font-semibold text-sm sm:text-base">GitHub</p>
-      </a>
+      </div>
+
+      <div className="mt-6 space-y-4 w-full flex flex-col items-center">
+        <a
+          href="https://maps.app.goo.gl/8mjvpY8Za7vgMgtCA"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300 hover:text-teal-700 dark:hover:text-teal-400"
+        >
+          <img
+            src={mapiconImage}
+            alt="Map Pin"
+            className="w-5 h-5 opacity-80 dark:invert"
+          />
+          <span className="font-medium">Hokkaido</span>
+        </a>
+        <a
+          href="https://atcoder.jp/users/tako50"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300 hover:text-teal-700 dark:hover:text-teal-400"
+        >
+          <img
+            src={AtCoderImage}
+            alt="AtCoder"
+            className="w-5 h-5 opacity-80 dark:invert"
+          />
+          <span className="font-medium">AtCoder</span>
+        </a>
+        <a
+          href="https://github.com/Tako50"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300 hover:text-teal-700 dark:hover:text-teal-400"
+        >
+          <img
+            src={GitHubImage}
+            alt="GitHub"
+            className="w-5 h-5 opacity-80 dark:invert"
+          />
+          <span className="font-medium">GitHub</span>
+        </a>
+      </div>
     </section>
-    
+
   );
 }
 
